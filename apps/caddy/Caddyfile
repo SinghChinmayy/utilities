@@ -1,2 +1,7 @@
-:2015
-respond "Hello, world I am Chinmay Singh!"
+localhost {
+	respond "Hello World"
+}
+
+localhost:2016 {
+	respond "Meow Meow\n"
+}

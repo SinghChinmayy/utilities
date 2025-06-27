@@ -1,6 +1,6 @@
 #!/bin/bash
 
-this script to do basic git backups without typing commands again and again
+#this script to do basic git backups without typing commands again and again
 #save the script in ~/bin for it to be executable
 
 echo -e "\n\033[1mCommitting git backup\033[0m\n"

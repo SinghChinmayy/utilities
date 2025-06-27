@@ -5,3 +5,8 @@ localhost {
 localhost:2016 {
 	respond "Meow Meow\n"
 }
+
+oci.dusky-census.ts.net {
+	root * /workspace/codes/sample_site/
+	file_server
+}

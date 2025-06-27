@@ -1,0 +1,57 @@
+# Caddy Command Cheatsheet
+
+## Basic Commands
+
+- `caddy start`  
+  Starts the Caddy service.
+
+- `caddy reload`  
+  Reloads the Caddy service after changes to the `Caddyfile`.
+
+- `caddy stop`  
+  Stops the Caddy service.
+
+## Development Note
+
+- When using Caddy with `localhost`, it automatically generates a **self-signed HTTPS certificate**, enabling easy and secure local development.
+
+## Basic Caddyfile Syntax
+
+```caddyfile
+localhost {
+    respond "Hello, world!"
+}
+
+localhost:2016 {
+    respond "Goodbye, world!"
+}
+```
+
+---
+
+## Using Caddy with Tailscale
+
+You can easily serve a static site or file server over your Tailscale network using Caddy.  
+Just add your Tailscale hostname in the Caddyfile like this:
+
+```caddyfile
+[your-host-name].ts.net {
+    root * /workspace/codes/sample_site/
+    file_server
+}
+```
+
+**Line-by-line breakdown:**
+- `[your-host-name].ts.net`  
+  This is your Tailscale machine's unique hostname. Replace with your actual Tailscale hostname (find it with `tailscale status`).
+- `root * /workspace/codes/sample_site/`  
+  Sets the root directory for your static site or files to serve.
+- `file_server`  
+  Enables Caddy's built-in file server to serve files from the specified root.
+
+> **Note:**  
+> The first time you load your Tailscale `.ts.net` address, it may take a little longer.  
+> This is normal—Caddy is acquiring a certificate for your Tailscale domain.
+
+This setup is a simple way to share static sites or files securely across your Tailscale network with
+

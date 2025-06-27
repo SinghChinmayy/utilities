@@ -10,3 +10,6 @@ oci.dusky-census.ts.net {
 	root * /workspace/codes/sample_site/
 	file_server
 }
+portainer.oci {
+    reverse_proxy https://oci.dusky-census.ts.net:9443
+}

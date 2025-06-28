@@ -1,23 +1,16 @@
 # utilities
 
-This repo contains my bash scripts and other utilities.
+A collection of scripts, utilities, and reference notes.
 
-## Caddy + Tailscale Quickstart
+---
 
-You can use [Caddy](./apps/caddy/notes) to easily serve static sites or files over your Tailscale network.
+## Index
 
-**Example Caddyfile for Tailscale:**
-```caddyfile
-[your-host-name].ts.net {
-    root * /workspace/codes/sample_site/
-    file_server
-}
-```
+- [Caddy + Tailscale Quickstart](./apps/caddy/notes)
+- [Vim Key Bindings & Reference](./apps/vim/vim_notes.md)
+- [Vim Key Bindings Chart (Image)](./apps/vim/vim_key_bindings.png)
+- [Caddyfile Example](./apps/caddy/Caddyfile)
 
-- Replace `[your-host-name].ts.net` with your actual Tailscale hostname (find it with `tailscale status`).
-- This setup lets you securely share static sites or files across your Tailscale network with minimal configuration.
+---
 
-> **Note:**  
-> The first time you access your `.ts.net` address, it may take a little longer as Caddy acquires a certificate for your Tailscale domain.
-
-See [apps/caddy/notes](./apps/caddy/notes) for more Caddy usage and tips.
+See each linked file for detailed usage, configuration, and tips.
